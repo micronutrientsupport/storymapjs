@@ -60,7 +60,6 @@ function triggerStory() {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit{
-@ViewChild('div', {static: true}) public div?: ElementRef;
 
   // storymap_data can be an URL or a Javascript object
   public title = 'storymap';
@@ -69,16 +68,13 @@ export class AppComponent implements OnInit, AfterViewInit{
 
 
   ngOnInit() {
-    console.debug(this.div);
     triggerStory();
     // this.bla.addEventListener("click", () => { this.testClick(); });
 
   }
 
   ngAfterViewInit() {
-    console.debug(this.div);
     document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
-    this.div!.nativeElement.innerHTML = "I am changed by ElementRef & ViewChild";
   }
 
   public testClick() {
