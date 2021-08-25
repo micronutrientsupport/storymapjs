@@ -1,3 +1,4 @@
+import { AfterViewInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 // declare function hello(): any;
 declare const KLStoryMap: any;
@@ -128,7 +129,7 @@ function triggerStory() {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   // storymap_data can be an URL or a Javascript object
   public title = 'storymap';
 
@@ -148,5 +149,13 @@ export class AppComponent implements OnInit {
 
     //   });
 
+  }
+
+  ngAfterViewInit() {
+    document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
+  }
+
+  public testClick() {
+  alert();
   }
 }
