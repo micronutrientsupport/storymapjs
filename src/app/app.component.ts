@@ -52,20 +52,21 @@ function triggerStory() {
 
 
   var storymap_options = {
-    width: 600,                // required for embed tool; width of StoryMap
-    height: 600,               // required for embed tool; height of StoryMap
+    width: 150,                // required for embed tool; width of StoryMap
+    height: 149,               // required for embed tool; height of StoryMap
     font_css: 'Calibri',              // optional; font set
     calculate_zoom: true,              // optional; defaults to true.
     storymap: {
       language: 'en',          // required; two-letter ISO language code
-      map_type: "zoomify",           // required
+      map_type: 'zoomify',           // required
       map_as_image: true,         // required; omit connecting lines between slide locations
       map_background_color:  '#808080', // optional; hexadecimal color value for map background
       zoomify: {
-        path: 'https://github.com/Sveouu/MAPS_help/tree/main/TileGroup0',              // required; URL path to zoomable image folder
-        width: 600,            // required; maximum width of image
-        height: 600,           // required; maximum height of image
-        tolerance: 1         // required; display tolerance
+        // path: 'https://github.com/Sveouu/MAPS_help/', // required; URL path to zoomable image folder
+        path: './assets/images/',
+        width: 150,            // required; maximum width of image
+        height: 149,           // required; maximum height of image
+        tolerance: 1.5         // required; display tolerance
     },
       slides: [{
         type: "overview",      // optional; if present must be set to "overview"
@@ -75,7 +76,7 @@ function triggerStory() {
         // },
         text: {                // optional if media present
           headline: 'Edinburgh Castle',
-          text: 'Edinburgh'       // may contain HTML markup
+          text: 'Edinburgh' + '<br>' + '<button id="test-button" >test</button>'       // may contain HTML markup
         },
         media: {               // optional if text present
           url: 'https://miro.medium.com/max/10368/1*1XPSskRR5Mbe3X01BmV3zw.jpeg',       // url for featured media
@@ -84,7 +85,6 @@ function triggerStory() {
         }
       },
        {
-          type: "2",      // optional; if present must be set to "overview"
           location: {            // required for all slides except "overview" slide
             lat: 55.9486,      // latitude of point on map
             lon: -3.1999       // longitude of point on map
@@ -99,22 +99,6 @@ function triggerStory() {
             // credit: string     // optional; creator of media content
           }
         }
-        // {
-        //   // type: "overview",      // optional; if present must be set to "overview"
-        //   location: {            // required for all slides except "overview" slide
-        //     lat: 55.9486,      // latitude of point on map
-        //     lon: -3.1999       // longitude of point on map
-        //   },
-        //   text: {                // optional if media present
-        //     headline: 'TEST',
-        //     text: 'TEST'       // may contain HTML markup
-        //   },
-        //   media: {               // optional if text present
-        //     url: 'https://miro.medium.com/max/10368/1*1XPSskRR5Mbe3X01BmV3zw.jpeg',       // url for featured media
-        //     // caption: string,   // optional; brief explanation of media content
-        //     // credit: string     // optional; creator of media content
-        //   }
-        // }
       ]           // required; array of slide objects (see below)
     }
   };
@@ -156,6 +140,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   public testClick() {
-  alert();
+  alert("Button works!");
   }
 }
