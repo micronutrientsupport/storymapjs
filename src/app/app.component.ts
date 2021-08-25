@@ -11,7 +11,7 @@ function triggerStory() {
     calculate_zoom: true,              // optional; defaults to true.
     storymap: {
       language: 'en',          // required; two-letter ISO language code
-      map_type: 'stamen:watercolor',          // required
+      map_type: 'osm:standard',          // required
       map_as_image: true,       // required
       // map_subdomains: string,    // optional
       slides: [{
@@ -29,7 +29,23 @@ function triggerStory() {
           // caption: string,   // optional; brief explanation of media content
           // credit: string     // optional; creator of media content
         }
-      }]           // required; array of slide objects (see below)
+      },
+        {
+          // type: "overview",      // optional; if present must be set to "overview"
+          location: {            // required for all slides except "overview" slide
+            lat: 55.9486,      // latitude of point on map
+            lon: -3.1999       // longitude of point on map
+          },
+          text: {                // optional if media present
+            headline: 'TEST',
+            text: 'TEST'       // may contain HTML markup
+          },
+          media: {               // optional if text present
+            url: 'https://miro.medium.com/max/10368/1*1XPSskRR5Mbe3X01BmV3zw.jpeg',       // url for featured media
+            // caption: string,   // optional; brief explanation of media content
+            // credit: string     // optional; creator of media content
+          }
+        }]           // required; array of slide objects (see below)
     }
   };
 
