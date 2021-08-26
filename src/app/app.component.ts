@@ -52,28 +52,29 @@ function triggerStory() {
 
 
   var storymap_options = {
-    width: 150,                // required for embed tool; width of StoryMap
-    height: 149,               // required for embed tool; height of StoryMap
+    width: 10000,                // required for embed tool; width of StoryMap
+    height: 4532,               // required for embed tool; height of StoryMap
     font_css: 'Calibri',              // optional; font set
-    calculate_zoom: true,              // optional; defaults to true.
+    calculate_zoom: false,              // optional; defaults to true.
     storymap: {
       language: 'en',          // required; two-letter ISO language code
       map_type: 'zoomify',           // required
       map_as_image: true,         // required; omit connecting lines between slide locations
       map_background_color:  '#808080', // optional; hexadecimal color value for map background
       zoomify: {
-        // path: 'https://github.com/Sveouu/MAPS_help/', // required; URL path to zoomable image folder
-        path: './assets/images/',
-        width: 150,            // required; maximum width of image
-        height: 149,           // required; maximum height of image
-        tolerance: 1.5         // required; display tolerance
+        path: 'https://sveouu.github.io/MAPS_story/', // required; URL path to zoomable image folder
+    //    path: './assets/images/',
+        width: 10000,            // required; maximum width of image
+        height: 4532,           // required; maximum height of image
+        tolerance: 0.9         // required; display tolerance
     },
       slides: [{
         type: "overview",      // optional; if present must be set to "overview"
-        // location: {            // required for all slides except "overview" slide
+        location: {            // required for all slides except "overview" slide
         //   lat: decimal,      // latitude of point on map
         //   lon: decimal       // longitude of point on map
-        // },
+        zoom: 10
+        },
         text: {                // optional if media present
           headline: 'Edinburgh Castle',
           text: 'Edinburgh' + '<br>' + '<button id="test-button" >test</button>'       // may contain HTML markup
@@ -86,8 +87,41 @@ function triggerStory() {
       },
        {
           location: {            // required for all slides except "overview" slide
-            lat: 55.9486,      // latitude of point on map
-            lon: -3.1999       // longitude of point on map
+            lat: 30.9486,      // latitude of point on map
+            lon: -12.1999,       // longitude of point on map
+            zoom: 0
+          },
+          text: {                // optional if media present
+            headline: 'Old Kincardine Castle',
+            text: 'Kincardine Estate, Auchterarder'       // may contain HTML markup
+          },
+          media: {               // optional if text present
+            url: 'https://i.pinimg.com/736x/d7/00/9d/d7009de6041addff3c9bf88c7c1bc147.jpg',       // url for featured media
+            // caption: string,   // optional; brief explanation of media content
+            // credit: string     // optional; creator of media content
+          }
+        },
+        {
+          location: {            // required for all slides except "overview" slide
+            lat: 65.9486,      // latitude of point on map
+            lon: -3.1999,       // longitude of point on map
+          zoom: 20
+        },
+          text: {                // optional if media present
+            headline: 'Drumlanrig Castle',
+            text: 'South of Glasgow'       // may contain HTML markup
+          },
+          media: {               // optional if text present
+            url: 'https://www.undiscoveredscotland.co.uk/thornhill/drumlanrigcastle/images/drumlanrig-450.jpg',       // url for featured media
+            // caption: string,   // optional; brief explanation of media content
+            // credit: string     // optional; creator of media content
+          }
+        },
+        {
+          location: {            // required for all slides except "overview" slide
+            lat: 45.9486,      // latitude of point on map
+            lon: -3.1999,       // longitude of point on map
+            zoom: 12
           },
           text: {                // optional if media present
             headline: 'Old Kincardine Castle',
