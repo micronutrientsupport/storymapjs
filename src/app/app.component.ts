@@ -56,6 +56,7 @@ function triggerStory() {
     height: 4532,               // required for embed tool; height of StoryMap
     font_css: 'Calibri',              // optional; font set
     calculate_zoom: false,              // optional; defaults to true.
+    zoomControl: true,
     storymap: {
       language: 'en',          // required; two-letter ISO language code
       map_type: 'zoomify',           // required
@@ -64,8 +65,8 @@ function triggerStory() {
       zoomify: {
         path: 'https://sveouu.github.io/MAPS_story/', // required; URL path to zoomable image folder
     //    path: './assets/images/',
-        width: 10000,            // required; maximum width of image
-        height: 4532,           // required; maximum height of image
+        width: 5000,            // required; maximum width of image
+        height: 2266,           // required; maximum height of image
         tolerance: 0.9         // required; display tolerance
     },
       slides: [{
@@ -74,6 +75,22 @@ function triggerStory() {
         //   lat: decimal,      // latitude of point on map
         //   lon: decimal       // longitude of point on map
         zoom: 10
+        },
+        text: {                // optional if media present
+          headline: 'Some Castles',
+          text: 'TEXT' + '<br>' + '<button id="test-button" >test</button>'       // may contain HTML markup
+        },
+        media: {               // optional if text present
+          url: '',       // url for featured media
+          // caption: string,   // optional; brief explanation of media content
+          // credit: string     // optional; creator of media content
+        }
+      },
+      {
+        location: {            // required for all slides except "overview" slide
+          lat: 80.9486,      // latitude of point on map
+          lon: -125.1999,       // longitude of point on map
+          zoom: 8
         },
         text: {                // optional if media present
           headline: 'Edinburgh Castle',
@@ -87,9 +104,9 @@ function triggerStory() {
       },
        {
           location: {            // required for all slides except "overview" slide
-            lat: 30.9486,      // latitude of point on map
-            lon: -12.1999,       // longitude of point on map
-            zoom: 0
+            lat: 65.9486,      // latitude of point on map
+            lon: -125.1999,       // longitude of point on map
+            zoom: 6
           },
           text: {                // optional if media present
             headline: 'Old Kincardine Castle',
@@ -105,7 +122,7 @@ function triggerStory() {
           location: {            // required for all slides except "overview" slide
             lat: 65.9486,      // latitude of point on map
             lon: -3.1999,       // longitude of point on map
-          zoom: 20
+          zoom: 16
         },
           text: {                // optional if media present
             headline: 'Drumlanrig Castle',
@@ -113,22 +130,6 @@ function triggerStory() {
           },
           media: {               // optional if text present
             url: 'https://www.undiscoveredscotland.co.uk/thornhill/drumlanrigcastle/images/drumlanrig-450.jpg',       // url for featured media
-            // caption: string,   // optional; brief explanation of media content
-            // credit: string     // optional; creator of media content
-          }
-        },
-        {
-          location: {            // required for all slides except "overview" slide
-            lat: 45.9486,      // latitude of point on map
-            lon: -3.1999,       // longitude of point on map
-            zoom: 12
-          },
-          text: {                // optional if media present
-            headline: 'Old Kincardine Castle',
-            text: 'Kincardine Estate, Auchterarder'       // may contain HTML markup
-          },
-          media: {               // optional if text present
-            url: 'https://i.pinimg.com/736x/d7/00/9d/d7009de6041addff3c9bf88c7c1bc147.jpg',       // url for featured media
             // caption: string,   // optional; brief explanation of media content
             // credit: string     // optional; creator of media content
           }
