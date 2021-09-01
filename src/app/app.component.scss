@@ -1,3 +1,10 @@
+
+
+@import 'src/assets/scss/_colour';
+button {
+  background-color: $color_primary;
+  border: 1px solid $color_primary;
+ }
  :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
