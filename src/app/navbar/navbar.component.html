@@ -1,5 +1,16 @@
-<mat-toolbar>
-  <a mat-raised-button color="primary" routerLink="" routerLinkActive="active">Home</a>
+<mat-toolbar color="primary">
+  <a mat-raised-button color="secondary" routerLink="" routerLinkActive="active">Home</a>
+  <div class="title">
+    <img src="../../assets/images/logos/maps-logo-full-white.svg" alt="MAPS-logo">
+    <h3>Support</h3>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu"></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
 
