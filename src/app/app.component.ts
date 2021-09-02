@@ -132,7 +132,7 @@ function triggerStory() {
         text: {                // optional if media present
           headline: 'Baseline Map',
           text: 'Present day micronutrient information for selection'
-           + '<br>' + '<button id="test-button" background-color: $color_primary >test</button>'       // may contain HTML markup
+           + '<br>' + '<button class="angular-lookalike" id="test-button" >test</button>'       // may contain HTML markup
         },
         media: {               // optional if text present
           url: 'https://github.com/Sveouu/MAPS_story/blob/main/malawi_map.PNG?raw=true',       // url for featured media
