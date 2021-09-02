@@ -1,5 +1,6 @@
-import { AfterViewInit } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 // declare function hello(): any;
 declare const KLStoryMap: any;
 
@@ -77,6 +78,7 @@ function triggerStory() {
         zoom: 15
         },
         text: {                // optional if media present
+
           headline: 'How the tool works',
           text: 'TEXT' + '<br>' + '<button id="test-button" >test</button>'       // may contain HTML markup
         },
@@ -193,7 +195,7 @@ function triggerStory() {
     }
   };
 
-  var storymap = new KLStoryMap.StoryMap('mapdiv', storymap_options);
+  const storymap = new KLStoryMap.StoryMap('mapdiv', storymap_options);
   window.onresize = function () {
     storymap.updateDisplay(); // this isn't automatic
   }
@@ -203,26 +205,27 @@ function triggerStory() {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit, AfterViewInit {
+
   // storymap_data can be an URL or a Javascript object
   public title = 'storymap';
+  public bla!: ElementRef;
+
 
 
   ngOnInit() {
     triggerStory();
-    // fetch("./story.html")
-    //   .then(response => {
-    //     return response.text()
-    //   })
-    //   .then(data => {
-    //     if (null != data) {
-    //       console.debug('call');
-    //      this.element = document.querySelector('body')?.innerHTML;
-    //       this.element = data;
-    //     }
+    // this.bla.addEventListener("click", () => { this.testClick(); });
 
-    //   });
+  }
 
+  ngAfterViewInit() {
+    document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
+  }
+
+  public testClick() {
+    alert('click');
   }
 
   ngAfterViewInit() {
