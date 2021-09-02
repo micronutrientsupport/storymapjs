@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+
   ],
   imports: [
     BrowserModule,

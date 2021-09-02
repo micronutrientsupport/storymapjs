@@ -1,11 +1,10 @@
 
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 
-// declare function hello(): any;
 declare const KLStoryMap: any;
 
 function triggerStory() {
-  console.debug('call');
+
   // var storymap_options = {
   //   width: 600,                // required for embed tool; width of StoryMap
   //   height: 600,               // required for embed tool; height of StoryMap
@@ -216,8 +215,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     triggerStory();
-    // this.bla.addEventListener("click", () => { this.testClick(); });
-
   }
 
   ngAfterViewInit() {
