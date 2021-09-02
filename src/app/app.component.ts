@@ -228,11 +228,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     alert('click');
   }
 
-  ngAfterViewInit() {
-    document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
-  }
 
-  public testClick() {
-  alert("Button works!");
-  }
 }
