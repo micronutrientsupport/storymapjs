@@ -233,10 +233,15 @@ export class StoryOneComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     triggerStory();
+
   }
 
   ngAfterViewInit() {
-    document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
+    // $("#test-button").css({ backgroundColor: "blue", borderLeft: "5px solid #ccc" });
+    $(".angular-lookalike").css({ backgroundColor: "$color_primary", fontSize: "1px"});
+    $("#test-button").click(() => {
+      $("#test-button").css({ backgroundColor: "red", borderLeft: "5px solid #ccc" });
+    });
   }
 
   public testClick() {
