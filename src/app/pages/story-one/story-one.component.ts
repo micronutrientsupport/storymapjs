@@ -215,6 +215,8 @@ function triggerStory() {
     storymap.updateDisplay(); // this isn't automatic
   }
 }
+
+declare const $: any;
 @Component({
   selector: 'app-story-one',
   templateUrl: './story-one.component.html',

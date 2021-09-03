@@ -160,7 +160,7 @@ function triggerStory() {
   },
       media: {               // media of datasource
     url: './assets/images/Malawi_Monthly Food.PNG',       // url for featured media //graph from powerpoint
-    caption: 'Graph displaying AdultFemaleEquivalent data for Malawi; currently not available in the tool',   // optional; brief explanation of media content
+    caption: 'Percentage of food group making up the Vitamin A supply',   // optional; brief explanation of media content
     // credit: string     // optional; creator of media content
   }
 }
