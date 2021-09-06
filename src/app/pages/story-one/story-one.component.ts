@@ -1,5 +1,7 @@
 
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { ColourPalette } from 'src/assets/scss/colourPalette.enum';
+
 
 declare const KLStoryMap: any;
 
@@ -238,9 +240,9 @@ export class StoryOneComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // $("#test-button").css({ backgroundColor: "blue", borderLeft: "5px solid #ccc" });
-    $(".angular-lookalike").css({ backgroundColor: "$color_primary", fontSize: "1px"});
-    $("#test-button").click(() => {
-      $("#test-button").css({ backgroundColor: "red", borderLeft: "5px solid #ccc" });
+    $(".angular-lookalike").css({ backgroundColor: 'blue', fontSize: "15px"});
+    $(".angular-lookalike").click(() => {
+      $(".angular-lookalike").css({ backgroundColor: ColourPalette.PRIMARY, borderLeft: "5px solid #ccc" });
     });
   }
 
