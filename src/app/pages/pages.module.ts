@@ -9,7 +9,11 @@ import { StorySixComponent } from './story-six/story-six.component';
 import { StoryEightComponent } from './story-eight/story-eight.component';
 import { StoryNineComponent } from './story-nine/story-nine.component';
 import { StorySevenComponent } from './story-seven/story-seven.component';
-// import { TableDialogComponent } from 'src/app/dialogs/table-dialog/table-dialog.component';
+import { TableModule } from '../dialogs/table-dialog/table.module';
+
+import { ModalModule } from './story-three/modal/modal.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -23,10 +27,13 @@ import { StorySevenComponent } from './story-seven/story-seven.component';
     StorySevenComponent,
     StoryEightComponent,
     StoryNineComponent,
-    // TableDialogComponent,
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TableModule,
+    ModalModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

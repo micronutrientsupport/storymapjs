@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ColourPalette } from 'src/assets/scss/colourPalette.enum';
-
+import { ModalService } from '../story-three/modal/modal.service';
 
 declare const $: any;
 declare const KLStoryMap: any;
@@ -95,7 +95,8 @@ function triggerStory() {
         text: {                // optional if media present
           headline: 'Slide on Benefits & Limitations of Data ',
           text:
-            'USE Dialog Modal to insert Table instead of image above'
+          '          <img height="20px"; width="20px"; class="open" src="./assets/images/launch.png">       <div style="display: none;" class="modal-outer">            <div class="modal-inner">              <button class="close">X</button>              <h1>Custom Modal</h1>              <p>SOME text</p>            </div>          </div> '
+
        },
         media: {               // media of datasource
           url: './assets/images/Story1_benefits_limitatons.PNG',       // url for featured media  './assets/images/malawi_map.PNG',
@@ -195,7 +196,7 @@ function triggerStory() {
           // credit: string     // optional; creator of media content
         }
       },
-//bar chart
+
 {
   location: {            // Zoom in on Malawi map
     lat: 65.9486,      // latitude of point on map
@@ -298,6 +299,7 @@ export class StoryTwoComponent implements OnInit {
 
   ngOnInit(): void {
     triggerStory();
+
   }
 
   ngAfterViewInit() {
@@ -318,7 +320,6 @@ export class StoryTwoComponent implements OnInit {
 
 
 
-
     // $(".Story1_italic").click(() => {
     //   $(".Story1_italic").css({ backgroundColor: ColourPalette.PRIMARY, borderLeft: "5px solid #ccc" });
     // });
@@ -327,6 +328,7 @@ export class StoryTwoComponent implements OnInit {
   public testClick() {
     alert('click');
   }
+
 
 
 }
