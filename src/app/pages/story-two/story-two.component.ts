@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ColourPalette } from 'src/assets/scss/colourPalette.enum';
 
+
 declare const $: any;
 declare const KLStoryMap: any;
 
@@ -34,7 +35,9 @@ function triggerStory() {
         text: {                // optional if media present
 
           headline: 'How does the MAPS tool make subnational estimates of dietary supply of micronutrients?',
-          text: ''       // may contain HTML markup
+          text:
+          '          <img height="20px"; width="20px"; class="open" src="./assets/images/launch.png">       <div style="display: none;" class="modal-outer">            <div class="modal-inner">              <button class="close">X</button>              <h1>custom MODAL</h1>              <p>SOME text</p>            </div>          </div> '
+                 // may contain HTML markup
         },
 
         media: {               // optional if text present
@@ -184,7 +187,7 @@ function triggerStory() {
             +  'Link to <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin"> Tang et al. 2021 </a>'
             +'<p>&nbsp;</p>'
             +  '<a href="https://www.google.com" <button id="viewData"> View data in the MAPS Tool </button></a>'
-            +  '<a href="https://www.google.com/"><img alt="video-walk-through" src="./assets/images/video_walkthrough_play.png" width=150" height="70"> video walk through </a>'
+            +  '<a href="https://www.google.com/"><img alt="video-walk-through" src="./assets/images/video_walkthrough_play.png" width=150" height="70">  <p>&nbsp;</p> video walk through </a>'
         },
             media: {               // media of datasource
           url: './assets/images/Malawi_AdultFemaleEquivalent.PNG',       // url for featured media //graph from powerpoint
@@ -284,7 +287,7 @@ function triggerStory() {
 @Component({
   selector: 'app-story-two',
   templateUrl: './story-two.component.html',
-  styleUrls: ['./story-two.component.scss']
+  styleUrls: ['./story-two.component.scss'],
 })
 export class StoryTwoComponent implements OnInit {
 
@@ -306,6 +309,14 @@ export class StoryTwoComponent implements OnInit {
     $("#viewData").css({
       background:"linear-gradient(-120deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) top no-repeat",
       backgroundColor: ColourPalette.PRIMARY, color: "white", fontSize: "15px", padding: "10px", margin:"15px"});
+    $('.open').click(function () {
+        $('.modal-outer').fadeIn('slow');
+      });
+     $('.close').click(function () {
+        $('.modal-outer').fadeOut('slow');
+      });
+
+
 
 
     // $(".Story1_italic").click(() => {
