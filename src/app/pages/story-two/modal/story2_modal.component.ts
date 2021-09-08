@@ -1,20 +1,20 @@
 import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
-import { ModalService } from './modal.service';
+import { Story2ModalService } from './story2_modal.service';
 
 @Component({
-    selector: 'story3-modal',
-    templateUrl: 'modal.component.html',
-  styleUrls: ['./modal.component.scss'],
+    selector: 'story2-modal',
+    templateUrl: 'story2_modal.component.html',
+  styleUrls: ['./story2_modal.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ModalComponent implements OnInit, OnDestroy {
+export class Story2ModalComponent implements OnInit, OnDestroy {
     @Input()
   public id!: string;
 
     private element: any;
 
-    constructor(private modalService: ModalService, private el: ElementRef) {
+    constructor(private Story2ModalService: Story2ModalService, private el: ElementRef) {
         this.element = el.nativeElement;
     }
 
@@ -30,30 +30,30 @@ export class ModalComponent implements OnInit, OnDestroy {
 
         // close modal on background click
         this.element.addEventListener('click', (el: { target: { className: string; }; }) => {
-            if (el.target.className === 'story3-modal') {
+            if (el.target.className === 'story2-modal') {
                 this.close();
             }
         });
 
         // add self (this modal instance) to the modal service so it's accessible from controllers
-        this.modalService.add(this);
+        this.Story2ModalService.add(this);
     }
 
     // remove self from modal service when component is destroyed
     ngOnDestroy(): void {
-        this.modalService.remove(this.id);
+        this.Story2ModalService.remove(this.id);
         this.element.remove();
     }
 
     // open modal
     open(): void {
         this.element.style.display = 'block';
-        document.body.classList.add('story3-modal-open');
+        document.body.classList.add('story2-modal-open');
     }
 
     // close modal
     close(): void {
         this.element.style.display = 'none';
-        document.body.classList.remove('story3-modal-open');
+        document.body.classList.remove('story2-modal-open');
     }
 }

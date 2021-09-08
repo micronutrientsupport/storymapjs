@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ColourPalette } from 'src/assets/scss/colourPalette.enum';
-import { ModalService } from '../story-three/modal/modal.service';
+import { Story2ModalService } from '../story-two/modal/story2_modal.service';
 
 declare const $: any;
 declare const KLStoryMap: any;
@@ -78,7 +78,13 @@ function triggerStory() {
         text: {                // optional if media present
           headline: 'Data holdings ',
           text:
-            '<button>Link to map showing data availability per country</button>'
+
+           '<img height="20px"; width="20px";  class="open" src="./assets/images/expand_right.png">       <div style="display: none;" class="modal-outer">            <div class="modal-inner">              <img height="20px"; width="20px"; class="close" src="./assets/images/expand.png" >           '
+          +'   <h1>The data availability varies by country</h1>           '+
+          '   <p>Navigate the map for data availability per country</p>            </div>          </div> '
+          +'<p>&nbsp;</p>' +
+          '<button class="test-button">Link to map showing data availability per country</button>'
+
        },
         media: {               // media of datasource
           url: './assets/images/africa_map_selection.PNG',       // url for featured media  './assets/images/malawi_map.PNG',
@@ -93,13 +99,13 @@ function triggerStory() {
           zoom: 3
         },
         text: {                // optional if media present
-          headline: 'Slide on Benefits & Limitations of Data ',
+          headline: 'Benefits & Limitations of Data ',
           text:
-          '          <img height="20px"; width="20px"; class="open" src="./assets/images/launch.png">       <div style="display: none;" class="modal-outer">            <div class="modal-inner">              <button class="close">X</button>              <h1>Custom Modal</h1>              <p>SOME text</p>            </div>          </div> '
+          '        Select a Data Source   <img height="20px"; width="20px"; id="test-button" class="open" src="./assets/images/launch.png">   '
 
        },
         media: {               // media of datasource
-          url: './assets/images/Story1_benefits_limitatons.PNG',       // url for featured media  './assets/images/malawi_map.PNG',
+          url: '',       // url for featured media  './assets/images/Story1_benefits_limitatons.PNG',
           // caption: string,   // optional; brief explanation of media content
           // credit: string     // optional; creator of media content
         }
@@ -291,31 +297,37 @@ function triggerStory() {
   styleUrls: ['./story-two.component.scss'],
 })
 export class StoryTwoComponent implements OnInit {
-
-  constructor() { }
-  // storymap_data can be an URL or a Javascript object
   public title = 'storymap';
 
+  public dataSourceArray:any = [
+    'Household Consumption & Expenditure Surveys',
+    'Food Balance Sheet data',
+  ];
+  public selectedItem: any;
+  constructor(private Story2ModalService: Story2ModalService) { }
 
   ngOnInit(): void {
     triggerStory();
-
   }
-
   ngAfterViewInit() {
     document.getElementById("test-button")?.addEventListener("click", () => { this.testClick(); });
 
     $(".Story1_italic").css({fontStyle: 'italic', fontSize: "15px"});
     $(".Story1_paragraph").css({fontStyle: 'normal', fontSize: "15px"});
+    $(".test-button").css({backgroundColor: ColourPalette.PRIMARY, fontSize: "15px", color: "white", padding: "10px", margin:"15px"});
+
     $("#procon-button").css({backgroundColor: ColourPalette.PRIMARY, fontSize: "15px", color: "white", padding: "10px", margin:"15px"});
     $("#viewData").css({
       background:"linear-gradient(-120deg, transparent 1em, #0099C3 1.05em , #0099C3 1.5em, transparent 1.45em, transparent 2em, #0099C3 2.05em) top no-repeat",
       backgroundColor: ColourPalette.PRIMARY, color: "white", fontSize: "15px", padding: "10px", margin:"15px"});
     $('.open').click(function () {
         $('.modal-outer').fadeIn('slow');
+        $('.open').css({display: 'none'});
+
       });
      $('.close').click(function () {
-        $('.modal-outer').fadeOut('slow');
+        $('.modal-outer').fadeOut('fast');
+        $('.open').css({display: 'block'});
       });
 
 
@@ -326,9 +338,15 @@ export class StoryTwoComponent implements OnInit {
   }
 
   public testClick() {
-    alert('click');
+    // alert('click');
+    this.openModal('custom-modal-2');
   }
+  openModal(id: string) {
+    this.Story2ModalService.open(id);
+}
 
-
+closeModal(id: string) {
+    this.Story2ModalService.close(id);
+}
 
 }
