@@ -14,6 +14,7 @@ import { TableModule } from '../dialogs/table-dialog/table.module';
 import { ModalModule } from './story-three/modal/modal.module';
 import { FormsModule } from '@angular/forms';
 import { Story2ModalModule } from './story-two/modal/story2_modal.module';
+import { DataAvaliabilityPercountryComponent } from './story-two/dialogs/dataAvaliabilityPerCountry/dataAvaliabilityPerCountry.component';
 
 
 
@@ -28,6 +29,7 @@ import { Story2ModalModule } from './story-two/modal/story2_modal.module';
     StorySevenComponent,
     StoryEightComponent,
     StoryNineComponent,
+    DataAvaliabilityPercountryComponent,
 
   ],
   imports: [

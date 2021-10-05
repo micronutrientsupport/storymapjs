@@ -23,12 +23,6 @@ import { ModalModule } from './pages/story-three/modal/modal.module';
     AppComponent,
     LandingComponent,
     NavbarComponent,
-
-
-
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -39,9 +33,6 @@ import { ModalModule } from './pages/story-three/modal/modal.module';
     PagesModule,
     TableModule,
     ModalModule,
-    FormsModule,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
