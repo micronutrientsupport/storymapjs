@@ -2,6 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { DialogService } from 'src/app/components/dialogs/dialog.service';
 import { ColourPalette } from 'src/assets/scss/colourPalette.enum';
 import { Story2ModalService } from '../story-two/modal/story2_modal.service';
+import "@gabrielfins/ripple-effect";
+
 
 declare const $: any;
 declare const KLStoryMap: any;
@@ -59,7 +61,7 @@ function triggerStory() {
 
             '<p class="Story1_italic">The MAPS Tool combines data where participants recall the food they have consumed, with information on the nutrient composition of the food item. </p>' + '<br>' + 'The MAPS Tool makes particular use of information from Living Standards Measurement Surveys – these surveys are undertaken relatively frequently, at a density that allows data to be presented broken down into categories such as the geographic region participants are from, what their relative wealth is or what time of year they took part in the survey.  This makes for a potential rich data source to inform our understanding of diet at the household level. However, there are assumptions which must be made using these data (as they are collected primarily to understand economic conditions) and limits to the extent to which we can use them. '
             + '<br>'
-            + '<button id="procon-button" > <a href="https://www.google.com/">Pros & Cons of LSMS Data DIALOG</a></button>'
+            + '<button id="ripple" class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> Pros & Cons of LSMS Data DIALOG </button>'
             + '<br>'
             + '<a href="https://www.google.com/"><img src="./assets/images/video_walkthrough_play.png"><p>&nbsp;</p> video walk through </a>',
         },
@@ -84,7 +86,7 @@ function triggerStory() {
             + '   <h1>The data availability varies by country</h1>           ' +
             '   <p>Navigate the map for data availability per country</p>            </div>          </div> '
             + '<p>&nbsp;</p>' +
-            '<button class="test-button" id="map-dialog-button" >Link to map showing data availability per country</button>'
+            '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light" id="map-dialog-button" >Link to map showing data availability per country</button>'
 
         },
         media: {               // media of datasource
@@ -192,10 +194,11 @@ function triggerStory() {
           text:
             '➤ When compared to wealth quintile <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin"> Tang et al. 2021 </a> show how important household wealth is in influencing dietary supplies of vitamin A, with the consistently highest supply estimated in the most wealthy households, decreasing through to the lowest income households. '
             + '<p>&nbsp;</p>'
-            + 'Link to <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin"> Tang et al. 2021 </a>'
+            + 'Link to <a class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light" href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin" target="_blank"> Tang et al. 2021 </a>'
             + '<p>&nbsp;</p>'
-            + '<a href="https://www.google.com" target="_blank" <button id="viewData"> View data in the MAPS Tool </button></a>'
-            + '<a href="https://www.google.com" target="_blank"><img alt="video-walk-through" src="./assets/images/video_walkthrough_play.png" width="150" height="70">  <p>&nbsp;</p> video walk through </a>'
+            + '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> View data in the MAPS Tool </button>'
+            + '<p>&nbsp;</p>'
+            + '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> View data in the MAPS Tool </button>'
         },
         media: {               // media of datasource
           url: './assets/images/Malawi_AdultFemaleEquivalent.PNG',       // url for featured media //graph from powerpoint
@@ -215,9 +218,9 @@ function triggerStory() {
           text:
             '➤ Seasonality of supply is also seen to be really important – especially for fruit and vegetables. The Dec-Mar season for fresh mangos creates a very noticeable increase in vitamin A in the diet, as shown below.  '
             + '<p>&nbsp;</p>'
-            + 'Link to <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin" target="_blank"> Tang et al. 2021 </a>'
+            + 'Link to <a class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light" href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin" target="_blank"> Tang et al. 2021 </a>'
             + '<p>&nbsp;</p>'
-            + '<a href="https://www.google.com" target="_blank" <button id="viewData"> View data in the MAPS Tool </button></a>'
+            + '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> View data in the MAPS Tool </button>'
             + '<p>&nbsp;</p>'
 
           // +  '<a href="https://www.google.com/"><img alt="mangoes" src="./assets/images/Malawi_magoes.jpg" width=300" height="140"><p>&nbsp;</p> </a>'
@@ -249,9 +252,9 @@ function triggerStory() {
             '➤ Any more detailed/localised studies should consider these findings in their study design'
             +
             '<p>&nbsp;</p>'
-            + 'Link to <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin"> Tang et al. 2021 </a>'
+            + 'Link to <a class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light" href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin" target="_blank"> Tang et al. 2021 </a>'
             + '<p>&nbsp;</p>'
-            + '<a href="https://www.google.com" target="_blank" <button id="viewData"> View data in the MAPS Tool </button></a>'
+            + '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> View data in the MAPS Tool </button>'
         },
         media: {               // media of datasource
           // url: 'https://res.cloudinary.com/jerrick/image/upload/v1509742245/q0l5lwzd91liplir3odz.jpg',       // url for featured media //graph from powerpoint
@@ -272,9 +275,9 @@ function triggerStory() {
           text:
             '➤ The nutritional content of food items are published in Food Composition Tables. Many nations have their own tables, but this is not always the case. It is also the case that very rarely does any one table contain data for all possible nutrients for all of the food items listed. This may be because some nutrients are more difficult to measure, so there is generally less data. This may also be because there was less interest in a nutrient historically, also resulting in fewer data points.  Given the difficulty in pulling together such data, many tables include data from other nations. Only very rarely is the specific location of the food item provided.       '
             + '<p>&nbsp;</p>'
-            + 'Link to <a href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin"> Tang et al. 2021 </a>'
+            + 'Link to <a class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light" href="https://www.lshtm.ac.uk/aboutus/people/tang.kevin" target="_blank"> Tang et al. 2021 </a>'
             + '<p>&nbsp;</p>'
-            + '<a href="https://www.google.com" <button id="viewData"> View data in the MAPS Tool </button></a>'
+            + '<button class="mat-focus-indicator mat-flat-button mat-button-base mat-primary md-ripples ripples-light"> View data in the MAPS Tool </button>'
         },
         media: {               // media of datasource
           url: './assets/images/Malawi_magoes.jpg',       // url for featured media //graph from powerpoint
@@ -316,6 +319,7 @@ export class StoryTwoComponent implements OnInit {
   ngAfterViewInit() {
     // document.getElementById("map-dialog-button")?.addEventListener("click", () => { this.testClick(); });
 
+    // $('#ripple').addClass('md-ripples ripples-light');
     $(".Story1_italic").css({ fontStyle: 'italic', fontSize: "15px" });
     $(".Story1_paragraph").css({ fontStyle: 'normal', fontSize: "15px" });
     $(".test-button").css({ backgroundColor: ColourPalette.PRIMARY, fontSize: "15px", color: "white", padding: "10px", margin: "15px" });
