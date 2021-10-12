@@ -9,6 +9,12 @@ import { StorySixComponent } from './story-six/story-six.component';
 import { StoryEightComponent } from './story-eight/story-eight.component';
 import { StoryNineComponent } from './story-nine/story-nine.component';
 import { StorySevenComponent } from './story-seven/story-seven.component';
+import { TableModule } from '../dialogs/table-dialog/table.module';
+
+import { ModalModule } from './story-three/modal/modal.module';
+import { FormsModule } from '@angular/forms';
+import { Story2ModalModule } from './story-two/modal/story2_modal.module';
+import { DataAvaliabilityPercountryComponent } from './story-two/dialogs/dataAvaliabilityPerCountry/dataAvaliabilityPerCountry.component';
 
 
 
@@ -23,9 +29,15 @@ import { StorySevenComponent } from './story-seven/story-seven.component';
     StorySevenComponent,
     StoryEightComponent,
     StoryNineComponent,
+    DataAvaliabilityPercountryComponent,
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TableModule,
+    ModalModule,
+    FormsModule,
+    Story2ModalModule,
   ]
 })
 export class PagesModule { }

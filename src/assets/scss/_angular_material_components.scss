@@ -81,3 +81,22 @@ mat-form-field.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
   max-width: 45em;
   width: 45em;
 }
+
+.mat-flat-button {
+  background-color: $color_primary;
+  box-sizing: border-box;
+  color: white;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-align: center;
+  margin: 1em;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  // box-shadow: '0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%)';
+}
