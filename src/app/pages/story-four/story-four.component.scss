@@ -1,0 +1,62 @@
+@import 'src/assets/scss/_colour';
+
+ #test-button {
+  background-color: $color_primary;
+  border: 1px solid $color_primary;
+ }
+.modal-outer {
+  background-color: greenyellow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100;
+  height:100;
+}
+.modal-inner {
+  background-color: lightblue;
+  width: 500px;
+  height:300px;
+  padding: 25px;
+  margin: 15%;
+}
+
+table {
+  width:800px;
+}
+td.mat-cell {
+  word-wrap: break-word;
+  word-break:break-all;
+}
+option{
+  width:auto;
+  padding: 15px;
+  margin: 15px;
+  background-color: $color_background_form;
+}
+select {
+  font-family: 'Quicksand';
+  width:auto;
+  padding: 15px;
+  margin: 15px;
+  background-color: $color_primary;
+}
+
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
