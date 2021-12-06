@@ -239,8 +239,6 @@ function triggerStory() {
     +'<li>Nationally and sub-nationally <strong>representative</strong>     </li>'
     +'<li> Includes detailed data on household food consumption quantity, source of food acquisition (e.g., own production, market purchased), and money spent if purchased </li>'
   +'<li>Includes data on household characteristics (poverty, geography, living conditions, socioeconomic status), enabling subnational modeling and equity considerations </li>'
-
-
     +'<h2>Weaknesses </h2>'
     +'<li>Optimistically collected every <strong>5 years</strong>    </li>'
     +'<li> Food consumption data is subject to <strong>recall error</strong>   </li>'
