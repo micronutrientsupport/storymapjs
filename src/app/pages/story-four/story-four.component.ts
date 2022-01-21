@@ -132,6 +132,7 @@ function triggerStory() {
           '➤ For the first example, under “dietary data source”, we will select “<strong>Fourth integrated household survey (IHS4)</strong>” to estimate dietary vitamin A supply, using HCES data from Malawi.'
           + '<br>'
           +'➤ The MAPS Tool is supported by data from Household Consumption & Expenditure Surveys, a rich source of data that can be used to inform our understanding of diets across populations. '
+          + '<br>'
           +'Samples of this size presents the opportunity to separate results by various sub-population characteristics such as the geographic region participants are from, their relative wealth, or the time of year they took part in the survey.'
 
 
